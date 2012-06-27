@@ -1,0 +1,101 @@
+#N canvas 173 89 846 353 10;
+#X obj 209 221 text3d;
+#X obj 209 129 list trim;
+#X obj 304 170 loadbang;
+#X obj 325 2 gemhead 20;
+#X obj 325 44 alpha 1;
+#X obj 275 152 color 1 1 1 0;
+#X obj 483 88 line;
+#X msg 483 114 1 1 1 \$1;
+#X msg 483 47 0 1000;
+#X obj 209 85 t a b b;
+#X obj 209 106 list prepend text;
+#X msg 242 191 6;
+#X msg 304 194 justify left base;
+#X text 217 240 post new_user ....;
+#X obj 106 116 tgl 15 0 /kinect/skeleton/status/show /kinect/skeleton/status/show
+show 17 7 0 10 -257985 -1 -1 1 1;
+#X obj 106 133 cnv 15 80 65 empty empty translate 10 5 0 8 -233017
+-66577 0;
+#X obj 119 147 nbx 4 14 -1e+37 1e+37 0 0 /kinect/skeleton/status/x
+/kinect/skeleton/status/x x 48 8 0 10 -262144 -1 -1 -6.37 256;
+#X obj 119 164 nbx 4 14 -1e+37 1e+37 0 0 /kinect/skeleton/status/y
+/kinect/skeleton/status/y y 48 8 0 10 -262144 -1 -1 -3.58 256;
+#X obj 119 181 nbx 4 14 -1e+37 1e+37 0 0 /kinect/skeleton/status/z
+/kinect/skeleton/status/z z 48 8 0 10 -262144 -1 -1 0 256;
+#N canvas 0 22 450 300 translate 0;
+#X obj 80 105 inlet;
+#X obj 80 169 outlet;
+#X obj 211 84 r /kinect/skeleton/status/x;
+#X obj 221 104 r /kinect/skeleton/status/y;
+#X obj 231 124 r /kinect/skeleton/status/z;
+#X obj 80 141 translateXYZ -4.8 -3.4 0;
+#X connect 0 0 5 0;
+#X connect 2 0 5 1;
+#X connect 3 0 5 2;
+#X connect 4 0 5 3;
+#X connect 5 0 1 0;
+#X restore 325 67 pd translate;
+#X obj 325 24 spigot 0;
+#X obj 556 25 r /kinect/skeleton/status/show;
+#X obj 107 220 bng 15 250 50 0 /kinect/skeleton/status/test /kinect/skeleton/status/test
+test 17 7 0 10 -262144 -1 -1;
+#X obj 107 201 nbx 2 14 -1e+37 1e+37 0 0 /kinect/skeleton/status/fontsize
+/kinect/skeleton/status/fontsize f.size 32 8 0 10 -262144 -1 -1 3 256
+;
+#X obj 271 217 r /kinect/skeleton/status/fontsize;
+#X msg 242 2 test;
+#X obj 242 -20 r /kinect/skeleton/status/test;
+#X obj 325 89 t a a;
+#X obj 325 111 separator;
+#X obj 391 110 separator;
+#X obj 489 235 color 1 1 1 0;
+#X msg 577 202 1;
+#X floatatom 592 237 5 0 0 0 - - -;
+#X msg 556 113 0.2 0.2 0.2 \$1;
+#X msg 416 8 0.8 200;
+#X obj 483 11 delay 5500;
+#X obj 63 24 r /kinect/skeleton/status;
+#X obj 483 68 spigot 0;
+#X obj 564 51 r /kinect/skeleton/status/autohide;
+#X obj 157 220 tgl 15 0 /kinect/skeleton/status/autohide /kinect/skeleton/status/autohide
+AH 17 7 0 10 -262144 -1 -1 0 1;
+#X obj 489 286 rectangle 1.6 0.2;
+#X obj 489 263 translateXYZ 0.6 0.05 -0.001;
+#X connect 1 0 0 0;
+#X connect 2 0 11 0;
+#X connect 2 0 12 0;
+#X connect 3 0 20 0;
+#X connect 4 0 19 0;
+#X connect 5 0 0 0;
+#X connect 6 0 7 0;
+#X connect 6 0 33 0;
+#X connect 7 0 5 1;
+#X connect 8 0 37 0;
+#X connect 9 0 10 0;
+#X connect 9 1 34 0;
+#X connect 9 2 35 0;
+#X connect 10 0 1 0;
+#X connect 11 0 0 1;
+#X connect 12 0 0 0;
+#X connect 19 0 27 0;
+#X connect 20 0 4 0;
+#X connect 21 0 20 1;
+#X connect 24 0 0 1;
+#X connect 25 0 9 0;
+#X connect 26 0 25 0;
+#X connect 27 0 28 0;
+#X connect 27 1 29 0;
+#X connect 28 0 5 0;
+#X connect 29 0 30 0;
+#X connect 30 0 41 0;
+#X connect 31 0 30 1;
+#X connect 32 0 41 1;
+#X connect 33 0 30 1;
+#X connect 34 0 6 0;
+#X connect 35 0 8 0;
+#X connect 36 0 9 0;
+#X connect 37 0 6 0;
+#X connect 38 0 37 1;
+#X connect 41 0 40 0;
+#X coords 0 -1 1 1 90 140 1 100 100;

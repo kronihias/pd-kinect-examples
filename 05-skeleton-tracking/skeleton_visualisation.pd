@@ -1,0 +1,43 @@
+#N canvas 562 395 600 338 10;
+#X obj 18 32 gem_sceleton 0;
+#X obj 22 173 status_msg;
+#X obj 236 31 gem_sceleton 1;
+#X text 161 171 2 instances to draw skeleton;
+#X text 163 190 switch skel_id to display the wanted user!;
+#N canvas 0 22 387 372 route_messages 0;
+#X obj 52 125 flip-instance-joint;
+#X obj 52 14 r /openni/msg;
+#X obj 139 92 s /kinect/skeleton/status;
+#X obj 52 63 routeOSC /joint;
+#X obj 52 39 routeOSC /skeleton;
+#X obj 98 228 s /kinect/skeleton/0;
+#X obj 209 172 r /kinect/skeleton/0/id;
+#X obj 154 263 r /kinect/skeleton/1/id;
+#X obj 43 318 s /kinect/skeleton/1;
+#X obj 98 200 route_alternative 1;
+#X obj 43 290 route_alternative 2;
+#X connect 0 0 9 0;
+#X connect 0 0 10 0;
+#X connect 1 0 4 0;
+#X connect 3 0 0 0;
+#X connect 3 1 2 0;
+#X connect 4 0 3 0;
+#X connect 6 0 9 1;
+#X connect 7 0 10 1;
+#X connect 9 0 5 0;
+#X connect 10 0 8 0;
+#X restore 484 51 pd route_messages;
+#N canvas 0 22 347 386 INIT 1;
+#X obj 29 5 loadbang;
+#X msg 29 36 \; /kinect/skeleton/0/x -2 \; /kinect/skeleton/0/y 0 \;
+/kinect/skeleton/0/scale_x 0.0025 \; /kinect/skeleton/0/scale_y 0.003
+\; /kinect/skeleton/0/scale_z 0.002 \; /kinect/skeleton/0/debug 1 \;
+/kinect/skeleton/0/norm_to_torso 1 \; /kinect/skeleton/0/id 1 \; /kinect/skeleton/1/x
+2 \; /kinect/skeleton/1/y 0 \; /kinect/skeleton/1/scale_x 0.003 \;
+/kinect/skeleton/1/scale_y 0.004 \; /kinect/skeleton/1/scale_z 0.002
+\; /kinect/skeleton/1/debug 1 \; /kinect/skeleton/1/norm_to_torso 1
+\; /kinect/skeleton/1/id 2 \; /kinect/skeleton/status/show 1 \; /kinect/skeleton/status/fontsize
+4 \; /kinect/skeleton/status/x -4 \; /kinect/skeleton/status/y 3 \;
+/kinect/skeleton/status/z 0 \;;
+#X connect 0 0 1 0;
+#X restore 484 29 pd INIT;

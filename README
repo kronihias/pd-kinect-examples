@@ -1,0 +1,29 @@
+pd-kinect-examples - Application examples for Kinect and Pure Data / GEM
+======================================
+
+A collection of examples about usage of pix_freenect, pix_openni and related externals for Pure Data/GEM.
+
+
+(C) 2012 by Matthias Kronlachner
+__________________________________________________________
+
+Binaries of externals for Mac OS are included.
+For other operating system get the source code of the externals from my Github and compile yourself.
+http://github.com/kronihias
+
+_______________
+:::CHANGELOG:::
+
+
+ ________________
+:::KNOWN BUGS:::
+
+
+ ________________
+:::THINGS TO DO:::
+
+* Include Windows Binaries
+
+
+
+questions: m.kronlachner@gmail.com
